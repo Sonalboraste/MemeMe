@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate
 {
     
+    @IBOutlet weak var buttonShare: UIButton!
+    
     @IBOutlet weak var imageViewPhoto: UIImageView!
 
     @IBOutlet weak var buttonCamera: UIButton!
@@ -57,11 +59,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         textFieldTop.delegate = self
         textFieldBottom.delegate = self
         
+        buttonShare.isEnabled = false
+        
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         buttonCamera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        
         
     }
     
@@ -93,6 +98,42 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
     
+    @IBAction func shareMemedImage()
+    {
+        print("Share meme")
+        
+        /*
+         generate a memed image
+        define an instance of the ActivityViewController
+        pass the ActivityViewController a memedImage as an activity item
+        present the ActivityViewController
+         */
+        
+        // memed image to share
+        let image = generateMemedImage()
+        
+        let imageToShare = [ image ]
+        
+        // set up activity view controller
+        let activityController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        
+        activityController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            if !completed
+            {
+                // User canceled
+                return
+            }
+            // User completed activity
+            self.save()
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        // present the view controller
+        self.present(activityController, animated: true, completion: nil)   
+        
+    }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
         print("Did Cancel")
@@ -103,6 +144,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         print("imagePickerController")
+        
+        //Enable the share button once image has beeen selected
+        buttonShare.isEnabled = true
+        
      
         imageViewPhoto.contentMode = .scaleAspectFit
         
@@ -113,6 +158,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         
         picker.dismiss(animated: true, completion: nil)
+        
         
     }
     
@@ -204,13 +250,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     func save()
     {
-        //let meme = MemeStruct(stringTopText: textFieldTop.text! , stringBottomText: textFieldBottom.text!, imageOriginal: imageViewPhoto.image!, imageMemed: generateMemedImage())
+        _ = MemeStruct(stringTopText: textFieldTop.text! , stringBottomText: textFieldBottom.text!, imageOriginal: imageViewPhoto.image!, imageMemed: generateMemedImage())
+        
         
     }
     
-    func generateMemedImage() -> UIImage {
+    func generateMemedImage() -> UIImage
+    {
         
         // TODO: Hide toolbar and navbar
+        
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -221,6 +270,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // TODO: Show toolbar and navbar
         
         return memedImage
+        
+    
     }
+    
 }
 

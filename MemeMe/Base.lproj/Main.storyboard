@@ -28,6 +28,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="401-GE-mXf" userLabel="Button Share">
                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
                                         <state key="normal" title="Share"/>
+                                        <connections>
+                                            <action selector="shareMemedImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRj-ZH-XzG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djs-lh-w3T" userLabel="Button Cancel">
                                         <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
@@ -98,6 +101,7 @@
                     <connections>
                         <outlet property="buttonCamera" destination="iOS-8L-BbO" id="mU4-Ky-s3p"/>
                         <outlet property="buttonGallery" destination="Tvx-iS-29t" id="we4-TB-82V"/>
+                        <outlet property="buttonShare" destination="401-GE-mXf" id="Q9t-Yu-7tk"/>
                         <outlet property="imageViewPhoto" destination="DLW-rh-A8n" id="TeN-0D-REe"/>
                         <outlet property="textFieldBottom" destination="iz2-rK-G7x" id="NjY-Ye-Af6"/>
                         <outlet property="textFieldTop" destination="kLx-Jn-TCY" id="Ugx-Ya-2Zm"/>

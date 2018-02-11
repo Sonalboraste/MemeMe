@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate
 {
     
+    
+    @IBOutlet weak var navbarTop: UINavigationBar!
+    
     @IBOutlet weak var buttonShare: UIBarButtonItem!
     
     @IBOutlet weak var imageViewPhoto: UIImageView!
@@ -26,6 +29,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     
     @IBOutlet weak var textFieldBottom: UITextField!
+    
+    @IBOutlet weak var toolbarBottom: UIToolbar!
+    
     
     var defaultTopText = "TOP"
     
@@ -150,6 +156,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         textFieldBottom.text = defaultBottomText
         
         imageViewPhoto.image = nil
+        
+        buttonShare.isEnabled = false
     }
     
     
@@ -277,8 +285,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func generateMemedImage() -> UIImage
     {
         
-        // TODO: Hide toolbar and navbar
-        
+        //Hide toolbar and navbar
+        navbarTop.isHidden = true
+        toolbarBottom.isHidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -286,7 +295,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // TODO: Show toolbar and navbar
+        //Show toolbar and navbar
+        navbarTop.isHidden = false
+        toolbarBottom.isHidden = false
         
         return memedImage
         

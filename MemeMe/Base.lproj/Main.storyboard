@@ -60,7 +60,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wTP-tu-Cyq" userLabel="Bottom Textfield">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wTP-tu-Cyq" userLabel="Bottom Textfield">
                                 <rect key="frame" x="0.0" y="541" width="375" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -97,6 +97,11 @@
                         <outlet property="buttonCamera" destination="ouf-4Q-jsZ" id="6Ye-IC-5Ec"/>
                         <outlet property="buttonGallery" destination="mCl-jF-MQo" id="eVO-s9-jd5"/>
                         <outlet property="buttonShare" destination="okL-IL-IHL" id="gRk-Mv-av5"/>
+                        <outlet property="imageViewPhoto" destination="8cR-ZW-a0v" id="SLT-mf-rP8"/>
+                        <outlet property="navbarTop" destination="c4K-sl-uHj" id="8Wu-8D-OB4"/>
+                        <outlet property="textFieldBottom" destination="wTP-tu-Cyq" id="MVp-3b-OCe"/>
+                        <outlet property="textFieldTop" destination="TbG-sp-30N" id="Iog-hc-7Xe"/>
+                        <outlet property="toolbarBottom" destination="RUC-gk-R9t" id="yl8-fU-ccc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -22,97 +22,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9Tm-Oc-IlA" userLabel="Stack View Top">
-                                <rect key="frame" x="16" y="20" width="343" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="401-GE-mXf" userLabel="Button Share">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
-                                        <state key="normal" title="Share"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUC-gk-R9t" userLabel="Bottom Toolbar">
+                                <rect key="frame" x="0.0" y="615" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Album" id="mCl-jF-MQo" userLabel="Album Toolbar Button">
                                         <connections>
-                                            <action selector="shareMemedImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRj-ZH-XzG"/>
+                                            <action selector="pickImage:" destination="BYZ-38-t0r" id="UJd-71-7Cc"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djs-lh-w3T" userLabel="Button Cancel">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="cancelMemeCreation" destination="BYZ-38-t0r" eventType="touchUpInside" id="J1d-h6-lHw"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DLW-rh-A8n">
-                                <rect key="frame" x="16" y="50" width="343" height="579"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="UKk-qY-5Bu"/>
+                                    <barButtonItem tag="1" title="Camera" id="ouf-4Q-jsZ" userLabel="Camera Toolbar Button"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8cR-ZW-a0v">
+                                <rect key="frame" x="0.0" y="82" width="375" height="523"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLx-Jn-TCY" userLabel="Text Field Top">
-                                <rect key="frame" x="24" y="58" width="327" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iz2-rK-G7x" userLabel="Text Field Bottom">
-                                <rect key="frame" x="16" y="591" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XsL-Y4-NDD" userLabel="Stack View Bottom">
-                                <rect key="frame" x="16" y="629" width="343" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOS-8L-BbO">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
-                                        <state key="normal" title="Camera"/>
-                                        <connections>
-                                            <action selector="pickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dc-BT-VFX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvx-iS-29t">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
-                                        <state key="normal" title="Album"/>
-                                        <connections>
-                                            <action selector="pickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEP-tY-xAL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4K-sl-uHj" userLabel="Top Navigation Bar">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="7hT-Ob-7fi">
+                                        <barButtonItem key="leftBarButtonItem" title="Share" id="okL-IL-IHL" userLabel="Share Navbar Button">
+                                            <connections>
+                                                <action selector="shareMemedImage:" destination="BYZ-38-t0r" id="weS-lq-6Zr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="Cj3-MD-UUs" userLabel="Cancel Navbar Button">
+                                            <connections>
+                                                <action selector="cancelMemeCreation:" destination="BYZ-38-t0r" id="KOo-IX-L2N"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DLW-rh-A8n" firstAttribute="top" secondItem="9Tm-Oc-IlA" secondAttribute="bottom" id="01b-Yq-5NX"/>
-                            <constraint firstItem="9Tm-Oc-IlA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2ar-z3-jyw"/>
-                            <constraint firstItem="kLx-Jn-TCY" firstAttribute="top" secondItem="9Tm-Oc-IlA" secondAttribute="bottom" constant="8" symbolic="YES" id="3Is-UF-yYn"/>
-                            <constraint firstItem="kLx-Jn-TCY" firstAttribute="trailing" secondItem="DLW-rh-A8n" secondAttribute="trailing" constant="-8" id="DoA-3D-irh"/>
-                            <constraint firstItem="XsL-Y4-NDD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eie-xy-olN"/>
-                            <constraint firstItem="kLx-Jn-TCY" firstAttribute="centerX" secondItem="DLW-rh-A8n" secondAttribute="centerX" id="H0q-La-7Cc"/>
-                            <constraint firstItem="XsL-Y4-NDD" firstAttribute="top" secondItem="iz2-rK-G7x" secondAttribute="bottom" constant="8" symbolic="YES" id="Hxc-wg-3VB"/>
-                            <constraint firstItem="kLx-Jn-TCY" firstAttribute="leading" secondItem="DLW-rh-A8n" secondAttribute="leading" constant="8" id="IX1-gU-qo6"/>
-                            <constraint firstItem="iz2-rK-G7x" firstAttribute="trailing" secondItem="DLW-rh-A8n" secondAttribute="trailing" id="Shc-1r-alW"/>
-                            <constraint firstItem="DLW-rh-A8n" firstAttribute="bottom" secondItem="XsL-Y4-NDD" secondAttribute="top" id="T4S-x4-FFF"/>
-                            <constraint firstItem="DLW-rh-A8n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XbS-ab-ZVK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XsL-Y4-NDD" secondAttribute="bottom" constant="8" id="Yc4-4y-rnt"/>
-                            <constraint firstItem="iz2-rK-G7x" firstAttribute="centerX" secondItem="DLW-rh-A8n" secondAttribute="centerX" id="bSP-jN-MIH"/>
-                            <constraint firstItem="9Tm-Oc-IlA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="h5P-uc-UcQ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="XsL-Y4-NDD" secondAttribute="leading" id="kvX-D3-hJk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Tm-Oc-IlA" secondAttribute="trailing" id="nSr-nE-6t3"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="9Tm-Oc-IlA" secondAttribute="leading" id="oDd-Tc-nfk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XsL-Y4-NDD" secondAttribute="trailing" id="qm8-ry-BrV"/>
-                            <constraint firstItem="iz2-rK-G7x" firstAttribute="leading" secondItem="DLW-rh-A8n" secondAttribute="leading" id="rYJ-2m-fpb"/>
-                            <constraint firstItem="DLW-rh-A8n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tHl-Nt-XsQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RUC-gk-R9t" secondAttribute="trailing" constant="-16" id="46U-bO-hmz"/>
+                            <constraint firstItem="RUC-gk-R9t" firstAttribute="top" secondItem="8cR-ZW-a0v" secondAttribute="bottom" constant="10" id="7z2-Ug-kBi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c4K-sl-uHj" secondAttribute="trailing" constant="-16" id="9Ca-wd-Eec"/>
+                            <constraint firstItem="RUC-gk-R9t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Be4-8B-SUR"/>
+                            <constraint firstItem="c4K-sl-uHj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Jez-2I-naK"/>
+                            <constraint firstItem="8cR-ZW-a0v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Ubk-4v-Qqg"/>
+                            <constraint firstItem="RUC-gk-R9t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="aZM-If-4IC"/>
+                            <constraint firstItem="c4K-sl-uHj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bnq-Ro-1l4"/>
+                            <constraint firstItem="8cR-ZW-a0v" firstAttribute="top" secondItem="c4K-sl-uHj" secondAttribute="bottom" constant="10" id="gUN-tx-cJn"/>
+                            <constraint firstItem="8cR-ZW-a0v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hFv-yB-GyE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8cR-ZW-a0v" secondAttribute="trailing" constant="-16" id="lDf-aQ-hbV"/>
+                            <constraint firstItem="c4K-sl-uHj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="nGz-xw-Ee3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RUC-gk-R9t" secondAttribute="bottom" constant="8" id="zt8-V1-cft"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WW7-QQ-YlW"/>
                     <connections>
-                        <outlet property="buttonCamera" destination="iOS-8L-BbO" id="mU4-Ky-s3p"/>
-                        <outlet property="buttonGallery" destination="Tvx-iS-29t" id="we4-TB-82V"/>
-                        <outlet property="buttonShare" destination="401-GE-mXf" id="Q9t-Yu-7tk"/>
-                        <outlet property="imageViewPhoto" destination="DLW-rh-A8n" id="TeN-0D-REe"/>
-                        <outlet property="textFieldBottom" destination="iz2-rK-G7x" id="NjY-Ye-Af6"/>
-                        <outlet property="textFieldTop" destination="kLx-Jn-TCY" id="Ugx-Ya-2Zm"/>
+                        <outlet property="buttonCamera" destination="ouf-4Q-jsZ" id="6Ye-IC-5Ec"/>
+                        <outlet property="buttonGallery" destination="mCl-jF-MQo" id="eVO-s9-jd5"/>
+                        <outlet property="buttonShare" destination="okL-IL-IHL" id="gRk-Mv-av5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1039.2" y="135.38230884557723"/>
+            <point key="canvasLocation" x="1016.8" y="151.57421289355324"/>
         </scene>
     </scenes>
 </document>

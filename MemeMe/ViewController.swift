@@ -11,15 +11,19 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate
 {
     
-    @IBOutlet weak var buttonShare: UIButton!
+    @IBOutlet weak var buttonShare: UIBarButtonItem!
     
     @IBOutlet weak var imageViewPhoto: UIImageView!
-
-    @IBOutlet weak var buttonCamera: UIButton!
     
-    @IBOutlet weak var buttonGallery: UIButton!
+    
+    @IBOutlet weak var buttonGallery: UIBarButtonItem!
+    
+    
+    @IBOutlet weak var buttonCamera: UIBarButtonItem!
+    
     
     @IBOutlet weak var textFieldTop: UITextField!
+    
     
     @IBOutlet weak var textFieldBottom: UITextField!
     
@@ -78,11 +82,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func pickImage(_ sender: Any)
     {
+    
         let imagePickerController = UIImagePickerController()
         
         imagePickerController.delegate = self
         
-        let clickedButton = sender as! UIButton
+        let clickedButton = sender as! UIBarButtonItem
         
         if(clickedButton.tag == 0)//pick Button
         {
@@ -98,8 +103,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
     
-    @IBAction func shareMemedImage()
+    @IBAction func shareMemedImage(_ sender: Any)
     {
+    
         print("Share meme")
         
         /*
@@ -134,10 +140,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
     
-    @IBAction func cancelMemeCreation()
+    @IBAction func cancelMemeCreation(_ sender: Any)
     {
-
-        
+      
         /*Reset UIControls to it's default values */
         
         textFieldTop.text = defaultTopText

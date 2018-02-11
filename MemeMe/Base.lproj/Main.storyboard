@@ -54,20 +54,40 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbG-sp-30N" userLabel="Top Textfield">
+                                <rect key="frame" x="0.0" y="116" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wTP-tu-Cyq" userLabel="Bottom Textfield">
+                                <rect key="frame" x="0.0" y="541" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="RUC-gk-R9t" secondAttribute="trailing" constant="-16" id="46U-bO-hmz"/>
+                            <constraint firstItem="wTP-tu-Cyq" firstAttribute="trailing" secondItem="8cR-ZW-a0v" secondAttribute="trailing" id="59N-5b-hzw"/>
+                            <constraint firstItem="wTP-tu-Cyq" firstAttribute="top" secondItem="8cR-ZW-a0v" secondAttribute="bottom" constant="-64" id="5UY-7m-KSm"/>
                             <constraint firstItem="RUC-gk-R9t" firstAttribute="top" secondItem="8cR-ZW-a0v" secondAttribute="bottom" constant="10" id="7z2-Ug-kBi"/>
+                            <constraint firstItem="8cR-ZW-a0v" firstAttribute="top" secondItem="TbG-sp-30N" secondAttribute="bottom" constant="-64" id="8t8-M2-G5z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c4K-sl-uHj" secondAttribute="trailing" constant="-16" id="9Ca-wd-Eec"/>
                             <constraint firstItem="RUC-gk-R9t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Be4-8B-SUR"/>
                             <constraint firstItem="c4K-sl-uHj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Jez-2I-naK"/>
+                            <constraint firstItem="TbG-sp-30N" firstAttribute="leading" secondItem="8cR-ZW-a0v" secondAttribute="leading" id="Qe0-l2-Nvs"/>
                             <constraint firstItem="8cR-ZW-a0v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Ubk-4v-Qqg"/>
+                            <constraint firstItem="wTP-tu-Cyq" firstAttribute="leading" secondItem="8cR-ZW-a0v" secondAttribute="leading" id="XzI-N6-Jth"/>
                             <constraint firstItem="RUC-gk-R9t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="aZM-If-4IC"/>
                             <constraint firstItem="c4K-sl-uHj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bnq-Ro-1l4"/>
+                            <constraint firstItem="TbG-sp-30N" firstAttribute="centerX" secondItem="8cR-ZW-a0v" secondAttribute="centerX" id="cm2-go-D44"/>
+                            <constraint firstItem="TbG-sp-30N" firstAttribute="trailing" secondItem="8cR-ZW-a0v" secondAttribute="trailing" id="eaw-ld-S1S"/>
                             <constraint firstItem="8cR-ZW-a0v" firstAttribute="top" secondItem="c4K-sl-uHj" secondAttribute="bottom" constant="10" id="gUN-tx-cJn"/>
                             <constraint firstItem="8cR-ZW-a0v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hFv-yB-GyE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8cR-ZW-a0v" secondAttribute="trailing" constant="-16" id="lDf-aQ-hbV"/>
+                            <constraint firstItem="wTP-tu-Cyq" firstAttribute="centerX" secondItem="8cR-ZW-a0v" secondAttribute="centerX" id="ltm-pO-NFT"/>
                             <constraint firstItem="c4K-sl-uHj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="nGz-xw-Ee3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RUC-gk-R9t" secondAttribute="bottom" constant="8" id="zt8-V1-cft"/>
                         </constraints>

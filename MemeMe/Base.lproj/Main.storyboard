@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="17A405" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUC-gk-R9t" userLabel="Bottom Toolbar">
-                                <rect key="frame" x="0.0" y="615" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="516" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Album" id="mCl-jF-MQo" userLabel="Album Toolbar Button">
                                         <connections>
@@ -31,17 +31,17 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UKk-qY-5Bu"/>
-                                    <barButtonItem tag="1" title="Camera" id="ouf-4Q-jsZ" userLabel="Camera Toolbar Button"/>
+                                    <barButtonItem tag="1" systemItem="camera" id="ouf-4Q-jsZ" userLabel="Camera Toolbar Button"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8cR-ZW-a0v">
-                                <rect key="frame" x="0.0" y="82" width="375" height="523"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8cR-ZW-a0v">
+                                <rect key="frame" x="0.0" y="82" width="320" height="424"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4K-sl-uHj" userLabel="Top Navigation Bar">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <items>
                                     <navigationItem id="7hT-Ob-7fi">
-                                        <barButtonItem key="leftBarButtonItem" title="Share" id="okL-IL-IHL" userLabel="Share Navbar Button">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="okL-IL-IHL" userLabel="Share Navbar Button">
                                             <connections>
                                                 <action selector="shareMemedImage:" destination="BYZ-38-t0r" id="weS-lq-6Zr"/>
                                             </connections>
@@ -55,16 +55,16 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbG-sp-30N" userLabel="Top Textfield">
-                                <rect key="frame" x="0.0" y="116" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wTP-tu-Cyq" userLabel="Bottom Textfield">
-                                <rect key="frame" x="0.0" y="541" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="442" width="320" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

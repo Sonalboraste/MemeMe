@@ -14,7 +14,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var navbarTop: UINavigationBar!
     
+    
     @IBOutlet weak var buttonShare: UIBarButtonItem!
+    
     
     @IBOutlet weak var imageViewPhoto: UIImageView!
     
@@ -30,6 +32,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var textFieldBottom: UITextField!
     
+    
     @IBOutlet weak var toolbarBottom: UIToolbar!
     
     
@@ -37,7 +40,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     var defaultBottomText = "BOTTOM"
     
-    struct MemeStruct
+    struct Meme
     {
         var stringTopText = ""
         var stringBottomText = ""
@@ -48,7 +51,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
 
         textFieldTop.text = defaultTopText
         
@@ -76,7 +79,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewWillAppear(_ animated: Bool)
     {
         buttonCamera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        
         
     }
     
@@ -111,15 +113,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func shareMemedImage(_ sender: Any)
     {
-    
-        print("Share meme")
-        
-        /*
-         generate a memed image
-        define an instance of the ActivityViewController
-        pass the ActivityViewController a memedImage as an activity item
-        present the ActivityViewController
-         */
         
         // memed image to share
         let image = generateMemedImage()
@@ -163,14 +156,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
-        print("Did Cancel")
         
        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
-        print("imagePickerController")
         
         //Enable the share button once image has beeen selected
         buttonShare.isEnabled = true
@@ -191,13 +182,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
-        print("Test the return key")
-        
         
         if textField.tag == 1
         {
-            print("BOTTOM")
-            
             
             subscribeToKeyboardNotifications(isKeyBoardReturn: true)
         }
@@ -209,8 +196,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func textFieldDidBeginEditing(_ textField: UITextField)
     {
-        print("Start...")
-
+        
         if textField.tag == 0
         {
             unsubscribeFromKeyboardNotifications()
@@ -277,7 +263,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     func save()
     {
-        _ = MemeStruct(stringTopText: textFieldTop.text! , stringBottomText: textFieldBottom.text!, imageOriginal: imageViewPhoto.image!, imageMemed: generateMemedImage())
+        _ = Meme(stringTopText: textFieldTop.text! , stringBottomText: textFieldBottom.text!, imageOriginal: imageViewPhoto.image!, imageMemed: generateMemedImage())
         
         
     }

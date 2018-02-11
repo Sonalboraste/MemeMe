@@ -134,6 +134,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
     
+    @IBAction func cancelMemeCreation()
+    {
+
+        
+        /*Reset UIControls to it's default values */
+        
+        textFieldTop.text = defaultTopText
+        
+        textFieldBottom.text = defaultBottomText
+        
+        imageViewPhoto.image = nil
+    }
+    
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
         print("Did Cancel")

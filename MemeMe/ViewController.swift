@@ -42,8 +42,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     struct Meme
     {
-        var stringTopText = ""
-        var stringBottomText = ""
+        var stringTopText : String
+        var stringBottomText : String
         var imageOriginal = UIImage()
         var imageMemed = UIImage()
     }
@@ -52,25 +52,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     {
         super.viewDidLoad()
         
-
-        textFieldTop.text = defaultTopText
+       
+        configure(textField: textFieldTop, withText: defaultTopText)
         
-        textFieldBottom.text = defaultBottomText
-        
-        let memeTextAttributes:[String:Any] = [
-            NSStrokeColorAttributeName: UIColor.black,
-            NSForegroundColorAttributeName: UIColor.white,
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 25)!,
-            NSStrokeWidthAttributeName: 12]
-        
-        textFieldTop.defaultTextAttributes = memeTextAttributes
-        textFieldBottom.defaultTextAttributes = memeTextAttributes
-        
-        textFieldTop.textAlignment = .center
-        textFieldBottom.textAlignment = .center
-        
-        textFieldTop.delegate = self
-        textFieldBottom.delegate = self
+        configure(textField: textFieldBottom, withText: defaultBottomText)
         
         buttonShare.isEnabled = false
         
@@ -153,6 +138,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         buttonShare.isEnabled = false
     }
     
+    func configure(textField: UITextField, withText text: String)
+    {
+        
+        textField.text = text
+        
+        let memeTextAttributes:[String:Any] = [
+            NSStrokeColorAttributeName: UIColor.black,
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 25)!,
+            NSStrokeWidthAttributeName: -5]
+        
+        textField.defaultTextAttributes = memeTextAttributes
+        
+        textField.textAlignment = .center
+        
+        textField.delegate = self
+        
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
@@ -272,8 +275,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     {
         
         //Hide toolbar and navbar
-        navbarTop.isHidden = true
-        toolbarBottom.isHidden = true
+        hideToolbarAndNavbar(isHide: true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -282,12 +284,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         UIGraphicsEndImageContext()
         
         //Show toolbar and navbar
-        navbarTop.isHidden = false
-        toolbarBottom.isHidden = false
+        hideToolbarAndNavbar(isHide: false)
         
         return memedImage
-        
+    }
     
+    func hideToolbarAndNavbar(isHide : Bool)
+    {
+        navbarTop.isHidden = isHide
+        toolbarBottom.isHidden = isHide
     }
     
 }

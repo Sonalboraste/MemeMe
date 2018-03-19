@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe
 //
 //  Created by Mrunal Bhatt on 1/19/18.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate
+
+
+class MemeEditorViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate
 {
     
     
@@ -40,13 +42,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     var defaultBottomText = "BOTTOM"
     
-    struct Meme
-    {
-        var stringTopText : String
-        var stringBottomText : String
-        var imageOriginal = UIImage()
-        var imageMemed = UIImage()
-    }
     
     override func viewDidLoad()
     {
@@ -116,7 +111,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             // User completed activity
             self.save()
             
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)            
+            
         }
         
         // present the view controller
@@ -266,16 +262,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     func save()
     {
-        _ = Meme(stringTopText: textFieldTop.text! , stringBottomText: textFieldBottom.text!, imageOriginal: imageViewPhoto.image!, imageMemed: generateMemedImage())
+        //Hide toolbar and navbar
+        hideToolbarAndNavbar(isHide: true)
         
+        let meme = Meme(stringTopText: textFieldTop.text! , stringBottomText: textFieldBottom.text!, imageOriginal: imageViewPhoto.image!, imageMemed: generateMemedImage())
+        
+        
+        //Add meme to AppDelegate's memes array
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
+        
+        
+        //Show toolbar and navbar
+        hideToolbarAndNavbar(isHide: false)
         
     }
     
     func generateMemedImage() -> UIImage
     {
         
-        //Hide toolbar and navbar
-        hideToolbarAndNavbar(isHide: true)
+        
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -283,8 +289,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        //Show toolbar and navbar
-        hideToolbarAndNavbar(isHide: false)
+       
         
         return memedImage
     }

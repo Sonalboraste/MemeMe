@@ -67,11 +67,11 @@
             </objects>
             <point key="canvasLocation" x="1462" y="828"/>
         </scene>
-        <!--Collection-->
+        <!--Navigation Controller-->
         <scene sceneID="1RU-eW-Paq">
             <objects>
                 <navigationController id="dHm-3B-QB8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" id="dH4-T7-wGl"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" selectedImage="collection_30x30" id="dH4-T7-wGl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zt0-lN-LVj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -194,11 +194,11 @@
             </objects>
             <point key="canvasLocation" x="-654" y="1191"/>
         </scene>
-        <!--Tabel-->
+        <!--Navigation Controller-->
         <scene sceneID="j1B-KQ-TBp">
             <objects>
                 <navigationController id="p2k-GP-bmS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tabel" id="hLd-Ys-rzh"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" selectedImage="table_30x30" id="hLd-Ys-rzh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ax6-9t-2AI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -314,6 +314,10 @@
             <point key="canvasLocation" x="2345" y="827"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection_30x30" width="30" height="30"/>
+        <image name="table_30x30" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LE1-yf-GNC"/>
     </inferredMetricsTieBreakers>

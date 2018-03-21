@@ -132,6 +132,8 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         imageViewPhoto.image = nil
         
         buttonShare.isEnabled = false
+        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func configure(textField: UITextField, withText text: String)
@@ -269,9 +271,11 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         
         
         //Add meme to AppDelegate's memes array
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memes.append(meme)
-        
+                
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        {
+            appDelegate.memes.append(meme)
+        }
         
         //Show toolbar and navbar
         hideToolbarAndNavbar(isHide: false)

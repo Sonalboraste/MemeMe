@@ -125,16 +125,6 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     
     @IBAction func cancelMemeCreation(_ sender: Any)
     {
-      
-        /*Reset UIControls to it's default values */
-        
-        textFieldTop.text = defaultTopText
-        
-        textFieldBottom.text = defaultBottomText
-        
-        imageViewPhoto.image = nil
-        
-        buttonShare.isEnabled = false
         
         navigationController?.popToRootViewController(animated: true)
     }

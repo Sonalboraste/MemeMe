@@ -60,12 +60,15 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     {
         buttonCamera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
+        hideNavigationBar(true)
     }
     
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+        
+        hideNavigationBar(false)
     }
     
     @IBAction func pickImage(_ sender: Any)
@@ -302,6 +305,11 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     {
         navbarTop.isHidden = isHide
         toolbarBottom.isHidden = isHide
+    }
+    
+    func hideNavigationBar(_ isHidden: Bool)
+    {
+        navigationController?.navigationBar.isHidden = isHidden
     }
     
 }
